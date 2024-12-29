@@ -1,0 +1,66 @@
+﻿@model WebApplication20.Models.Condition
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Condition</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studyDesk)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studyDesk)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fridge)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fridge)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mattress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mattress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.wallSocket)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.wallSocket)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.chair)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.chair)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stove)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stove)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lightSwitches)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lightSwitches)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ConditionImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ConditionImage)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

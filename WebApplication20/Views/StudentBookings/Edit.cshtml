@@ -1,0 +1,159 @@
+﻿@model WebApplication20.Models.StudentBooking
+
+@{
+    ViewData["Title"] = Model.Id == 0 ? "Create Student Booking" : "Edit Student Booking";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: gainsboro;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h1>@(Model.Id == 0 ? "Create Student Booking" : "Edit Student Booking")</h1>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="@(Model.Id == 0 ? "Create" : "Edit")" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+
+                            <!-- Name Field -->
+                            <div class="form-group row">
+                                <label asp-for="Name" class="col-sm-4 col-form-label">Name:</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="Name" class="form-control" placeholder="Enter Name" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Surname Field -->
+                            <div class="form-group row">
+                                <label asp-for="Surname" class="col-sm-4 col-form-label">Surname:</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="Surname" class="form-control" placeholder="Enter Surname" />
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Email Field -->
+                            <div class="form-group row">
+                                <label asp-for="Email" class="col-sm-4 col-form-label">Email:</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="Email" type="email" class="form-control" placeholder="Enter Email" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Phone Number Field -->
+                            <div class="form-group row">
+                                <label asp-for="PhoneNumber" class="col-sm-4 col-form-label">Phone Number:</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="Enter Phone Number" />
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Gender Dropdown -->
+                            <div class="form-group row">
+                                <label asp-for="gender" class="col-sm-4 col-form-label">Gender:</label>
+                                <div class="col-sm-8">
+                                    <select asp-for="gender" class="form-control">
+                                        <option value="">Select type of Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                    <span asp-validation-for="gender" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Room Type Dropdown -->
+                            <div class="form-group row">
+                                <label asp-for="roomType" class="col-sm-4 col-form-label">Room Type:</label>
+                                <div class="col-sm-8">
+                                    <select asp-for="roomType" class="form-control">
+                                        <option value="">Select Room Type</option>
+                                        <option value="Single">Single</option>
+                                        <option value="Double">Double</option>
+                                        <option value="Suite">Suite</option>
+                                    </select>
+                                    <span asp-validation-for="roomType" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Booking Start Date -->
+                            <div class="form-group row">
+                                <label asp-for="BookingStartDate" class="col-sm-4 col-form-label">Booking Start Date:</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="BookingStartDate" type="date" class="form-control" />
+                                    <span asp-validation-for="BookingStartDate" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Booking End Date -->
+                            <div class="form-group row">
+                                <label asp-for="BookingEndDate" class="col-sm-4 col-form-label">Booking End Date:</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="BookingEndDate" type="date" class="form-control" />
+                                    <span asp-validation-for="BookingEndDate" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Room Number Field -->
+                            <div class="form-group row">
+                                <label asp-for="RoomNumber" class="col-sm-4 col-form-label">Room Number:</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="RoomNumber" class="form-control" placeholder="Enter Room Number" />
+                                    <span asp-validation-for="RoomNumber" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Emergency Contact Field -->
+                            <div class="form-group row">
+                                <label asp-for="EmergencyContact" class="col-sm-4 col-form-label">Emergency Contact:</label>
+                                <div class="col-sm-8">
+                                    <input asp-for="EmergencyContact" type="tel" class="form-control" placeholder="Enter Emergency Contact" />
+                                    <span asp-validation-for="EmergencyContact" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary">@((Model.Id == 0) ? "Create" : "Save Changes")</button>
+                                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,155 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+body {
+  margin-bottom: 60px;
+}
+/*this is design for cards and button that are on top of cards*/
+.room-card {
+    margin: 20px;
+}
+
+    .room-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .room-card .card-body {
+        text-align: center;
+    }
+
+
+    .room-card .btn {
+        width: 100%;
+    }
+
+/* Additional styles for the top navigation */
+.nav-room-types {
+    display: flex;
+    justify-content: space-between; /* Align items at the start, center, and end */
+    margin-bottom: 20px;
+}
+
+    .nav-room-types .nav-item {
+        margin-right: 10px;
+    }
+
+    /* Style the navigation links as buttons */
+    .nav-room-types .nav-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+        .nav-room-types .nav-link:hover {
+            background-color: #0056b3;
+        }
+/*end*/
+
+.newsletter-container {
+    background-color: lightgray;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+/*Send button styling*/
+.send-btn {
+    background-color: black;
+    color: lightgray;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 25px;
+    font-weight: 500;
+
+}
+    
+
+.news-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.card-body1{
+    background-color:lightgray;
+}
+
+
+/*This for layout styling*/
+/* Custom Navbar Styles */
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* Text color */
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    color: white; /* Text color */
+    transition: color 0.3s ease-in-out;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #f8f9fa; /* White text on hover */
+    }
+
+/* Navbar Toggler Icon Color */
+.navbar-toggler-icon {
+    color: white; /* Text color */
+}
+
+/* Align Image */
+.navbar-logo {
+    margin-right: 60px;
+    width: 60px; /* Adjust as needed */
+    height: 90px;
+}
+
+/* Custom Background Color for Navbar */
+.bg-light-blue {
+    background-color: lightblue !important; /* Navbar background color */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: lightblue; /* Footer background color */
+    color: black; /* Text color */
+    padding: 20px 0;
+}
+
+    /* Footer Link Styles */
+    .footer a {
+        color: white; /* Footer link text color */
+    }
+
+    /* Footer Link Hover Styles */
+        .footer a:hover {
+            color: #f8f9fa; /* White text on hover */
+            text-decoration: none; /* Remove underline on hover */
+        }

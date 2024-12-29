@@ -1,0 +1,125 @@
+﻿@model WebApplication20.Models.RoomCondition
+
+@{
+    ViewData["Title"] = "state your issue";
+}
+
+<h1>State your issue</h1>
+
+<div class="card mx-auto" style="max-width: 800px;">
+    <div class="card-body">
+        <h4 class="card-title">RoomCondition</h4>
+        <hr />
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row">
+                <label for="fridge" class="col-sm-4 col-form-label">Fridge Condition:</label>
+                <div class="col-sm-8">
+                    <select asp-for="fridge" class="form-control">
+                        <option value="">Select Fridge Condition</option>
+                        <option value="Good">Good Condition</option>
+                        <option value="Bad">Bad Condition</option>
+                    </select>
+                    <span asp-validation-for="fridge" class="text-danger"></span>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group row">
+                <label for="studyDesk" class="col-sm-4 col-form-label">Study Desk Condition:</label>
+                <div class="col-sm-8">
+                    <select asp-for="studyDesk" class="form-control">
+                        <option value="">Select Study Desk Condition</option>
+                        <option value="Good">Good Condition</option>
+                        <option value="Bad">Bad Condition</option>
+                    </select>
+                    <span asp-validation-for="studyDesk" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <label for="mattress" class="col-sm-4 col-form-label">Mattress Condition:</label>
+                <div class="col-sm-8">
+                    <select asp-for="mattress" class="form-control">
+                        <option value="">Select Mattress Condition</option>
+                        <option value="Good">Good Condition</option>
+                        <option value="Bad">Bad Condition</option>
+                    </select>
+                    <span asp-validation-for="mattress" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <label for="wallSocket" class="col-sm-4 col-form-label">Wall Socket Condition:</label>
+                <div class="col-sm-8">
+                    <select asp-for="wallSocket" class="form-control">
+                        <option value="">Select Wall Socket Condition</option>
+                        <option value="Good">Good Condition</option>
+                        <option value="Bad">Bad Condition</option>
+                    </select>
+                    <span asp-validation-for="wallSocket" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <label for="chair" class="col-sm-4 col-form-label">Chair Condition:</label>
+                <div class="col-sm-8">
+                    <select asp-for="chair" class="form-control">
+                        <option value="">Select Chair Condition</option>
+                        <option value="Good">Good Condition</option>
+                        <option value="Bad">Bad Condition</option>
+                    </select>
+                    <span asp-validation-for="chair" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <label for="stove" class="col-sm-4 col-form-label">Stove Condition:</label>
+                <div class="col-sm-8">
+                    <select asp-for="stove" class="form-control">
+                        <option value="">Select Stove Condition</option>
+                        <option value="Good">Good Condition</option>
+                        <option value="Bad">Bad Condition</option>
+                    </select>
+                    <span asp-validation-for="stove" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <label for="lightSwitches" class="col-sm-4 col-form-label">Light & Switches Condition:</label>
+                <div class="col-sm-8">
+                    <select asp-for="lightSwitches" class="form-control">
+                        <option value="">Select Light & Switches Condition</option>
+                        <option value="Good">Good Condition</option>
+                        <option value="Bad">Bad Condition</option>
+                    </select>
+                    <span asp-validation-for="lightSwitches" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <label for="Description" class="col-sm-4 col-form-label">Description:</label>
+                <div class="col-sm-8">
+                    <textarea asp-for="Discription" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Discription" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <div class="col-sm-8 offset-sm-4">
+                    <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                    <a asp-action="Index" class="btn btn-danger btn-lg">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br/>
+<br />
+<br />
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

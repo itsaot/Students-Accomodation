@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Accommodation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('rea1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            z-index: 1;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+            .gallery img {
+                width: 300px;
+                height: auto;
+                margin: 10px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        .newsletter-container {
+            width: 100%; /* Width of the newsletter container */
+            margin: auto;
+            text-align: center;
+        }
+
+        .newsletter {
+            margin-top: 20px;
+            text-align: left; /* Align content to the left */
+        }
+
+            .newsletter input[type="email"] {
+                width: calc(100% - 120px); /* Adjust input width */
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+
+        .send-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+            .send-btn:hover {
+                background-color: orange;
+            }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Welcome To The Campus Student Living</h1>
+
+            <p>Find your perfect place to stay while studying</p>
+            <p>Explore our range of modern and convenient accommodations</p>
+
+            <form asp-action="Create" asp-controller="StudentBookings">
+                <button type="submit" class="btn btn-primary">Book Now</button>
+            </form>
+            <br />
+
+            <p id="current-time-container"><strong>Current time on server: </strong><span id="current-time"></span></p>
+        </div>
+    </div>
+    <br />
+    <div class="text-center">
+        <h3>Our Accommodation</h3>
+    </div>
+
+    <div class="gallery">
+        <img src="rea2.jpg" alt="Accommodation 1">
+        <img src="rea3.jpg" alt="Accommodation 2">
+        <img src="rea4.jpg" alt="Accommodation 3">
+    </div>
+
+    <div class="newsletter-container">
+        <h1>Get the latest news and important updates concerning the Campus Student Living</h1>
+        <div class="newsletter">
+            <input type="email" id="emailInput" class="form-control" placeholder="Email Address" />
+            <button type="submit" class="send-btn" onclick="subscribe()">Subscribe</button>
+        </div>
+    </div>
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3468.9652791330764!2d30.38229477539598!3d-29.604695575148003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef6bcf4b34050fd%3A0x3c0e43b11a01cd19!2s291%20Prince%20Alfred%20St%2C%20Pietermaritzburg%2C%203201!5e0!3m2!1sen!2sza!4v1714713928764!5m2!1sen!2sza" frameborder="0" style="border:0; width: 100%; height: 450px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <script>
+        // Function to update and display the current server time every second
+        function updateCurrentTime() {
+            const currentTimeContainer = document.getElementById('current-time');
+            const date = new Date(); // Get the current date and time
+            currentTimeContainer.textContent = date.toLocaleTimeString(); // Update the time display
+        }
+
+        // Call the function immediately to display the time right away
+        updateCurrentTime();
+        // Set an interval to update the time every second
+        setInterval(updateCurrentTime, 1000);
+    </script>
+</body>
+</html>
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Rooms";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <!-- Top Navigation for Room Types -->
+    <div class="nav-room-types">
+        <div class="nav-item">
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Single">Single</a>
+        </div>
+        <div class="nav-item mx-auto">
+            <!-- mx-auto for center alignment -->
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Double">Double </a>
+        </div>
+        <div class="nav-item ml-auto">
+            <!-- ml-auto for right alignment -->
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Triple">Triple</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>@ViewData["Title"]</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="room-card card">
+                    <img src="~/single 1.jpeg" class="card-img-top" alt="Single Room 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room </h5>
+                        <p class="card-text">Single Room with double bed, couch, TV in the room and study table.</p>
+                        <p class="card-text">R5000 per Month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="room-card card">
+                    <img src="~/single 2.jpeg" class="card-img-top" alt="Single Room 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room </h5>
+                        <p class="card-text">Single Room without a couch, but it has a nice  single bed, study table and TV.</p>
+                        <p class="card-text">R5000 per Month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="room-card card">
+                    <img src="~/single 3.jpeg" class="card-img-top" alt="Single Room 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room </h5>
+                        <p class="card-text">Single Room with couch,  nice comfortable single bed, study table and TV.</p>
+                        <p class="card-text">R5000 per month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="room-card card">
+                    <img src="~/single 4.jpeg" class="card-img-top" alt="Single Room 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room </h5>
+                        <p class="card-text">get your single room.</p>
+                        <p class="card-text">R5000 per month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="room-card card">
+                    <img src="~/single 5.jpeg" class="card-img-top" alt="Single Room 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room </h5>
+                        <p class="card-text">Get a single Room.</p>
+                        <p class="card-text">R5000 per month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="room-card card">
+                    <img src="~/single 6.jpeg" class="card-img-top" alt="Single Room 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room </h5>
+                        <p class="card-text">Get a single room.</p>
+                        <p class="card-text">R5000 per month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<div>
+    <br />
+    <br />
+    <br />
+</div>

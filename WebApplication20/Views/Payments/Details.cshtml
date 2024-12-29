@@ -1,0 +1,129 @@
+﻿@model WebApplication20.Models.Payment
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .success-container {
+            max-width: 700px;
+            margin: 100px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .success-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .success-message {
+            font-size: 24px;
+            
+            text-align: center;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .success-icon {
+            font-size: 64px;
+            color: #28a745;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-back-home {
+            padding: 12px 24px;
+            font-size: 18px;
+        }
+
+            .btn-back-home i {
+                margin-right: 10px;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="success-container">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="success-header">
+                <h2>Payment Successfully</h2>
+            </div>
+            <div class="success-message"><strong>
+                Your payment has been successfully processed.
+                </strong>
+            </div>
+            <dl class="row">
+               
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.FullName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.FullName)
+                </dd>
+                <!-- Add other payment details here -->
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CardNumber)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CardNumber)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ExpiryDate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ExpiryDate)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CVV)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CVV)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Amount)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Amount)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.PaymentDate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.PaymentDate)
+                </dd>
+            </dl>
+            <div class="text-center">
+                <a href="/" class="btn btn-primary btn-back-home"><i class="fas fa-home"></i> Back to Home</a>
+                <a asp-action="DownloadPdf" asp-route-id="@Model.Id" class="btn btn-primary btn-lg">Download PDF</a>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

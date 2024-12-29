@@ -1,0 +1,109 @@
+﻿@model WebApplication20.Models.Condition
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Condition</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="studyDesk" class="control-label"></label>
+                <select asp-for="studyDesk" class="form-control">
+                    <option value="">Select Light & Switches Condition</option>
+                    <option value="Good">Good Condition</option>
+                    <option value="Bad">Bad Condition</option>
+                </select>
+                <span asp-validation-for="studyDesk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fridge" class="control-label"></label>
+                <select asp-for="fridge" class="form-control">
+                    <option value="">Select Light & Switches Condition</option>
+                    <option value="Good">Good Condition</option>
+                    <option value="Bad">Bad Condition</option>
+                </select>
+                <span asp-validation-for="fridge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mattress" class="control-label"></label>
+                <select asp-for="mattress" class="form-control">
+                    <option value="">Select Light & Switches Condition</option>
+                    <option value="Good">Good Condition</option>
+                    <option value="Bad">Bad Condition</option>
+                </select>
+                <span asp-validation-for="mattress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="wallSocket" class="control-label"></label>
+                <select asp-for="wallSocket" class="form-control">
+                    <option value="">Select Light & Switches Condition</option>
+                    <option value="Good">Good Condition</option>
+                    <option value="Bad">Bad Condition</option>
+                </select>
+                <span asp-validation-for="wallSocket" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="chair" class="control-label"></label>
+                <select asp-for="chair" class="form-control">
+                    <option value="">Select Light & Switches Condition</option>
+                    <option value="Good">Good Condition</option>
+                    <option value="Bad">Bad Condition</option>
+                </select>
+                <span asp-validation-for="chair" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="stove" class="control-label"></label>
+                <select asp-for="stove" class="form-control">
+                    <option value="">Select Light & Switches Condition</option>
+                    <option value="Good">Good Condition</option>
+                    <option value="Bad">Bad Condition</option>
+                </select>
+                <span asp-validation-for="stove" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lightSwitches" class="control-label"></label>
+                <select asp-for="lightSwitches" class="form-control">
+                    <option value="">Select Light & Switches Condition</option>
+                    <option value="Good">Good Condition</option>
+                    <option value="Bad">Bad Condition</option>
+                </select>
+                <span asp-validation-for="lightSwitches" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label">New Image</label>
+                <input type="file" asp-for="ImageFile" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            @if (Model != null && Model.ConditionImage != null)
+            {
+                <img src="@Url.Content("~/images/" + Model.ConditionImage)" alt="Current Image" class="w-40" />
+            }
+            else
+            {
+                <p>No image available</p>
+            }
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

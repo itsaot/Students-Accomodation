@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Student living</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication20.styles.css" asp-append-version="true" />
+    @*This is styleshit link for envelop that are in the message page*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light-blue border-bottom box-shadow mb-3  ">
+            <div class="container-fluid">
+                <img src="~/studentliving.jpg" class="navbar-logo" />
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Student Living</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><strong>Home</strong></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="roomDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <strong>View Rooms</strong>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="roomDropdown">
+                                <li><a class="dropdown-item" href="@Url.Action("Single", "Home")"><strong>Single Room</strong></a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Double", "Home")"><strong>Double Room</strong></a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Triple", "Home")"><strong>Triple Room</strong></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="StudentBookings" asp-action="Index"><strong>Bookings</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="RoomConditions" asp-action="Index"><strong>Condition</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Payments" asp-action="Create"><strong>Payments</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="FeedBacks" asp-action="Create"><strong>Feed back</strong></a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Ke Group Work - <a asp-area="" asp-controller="Home" asp-action="Privacy">Single bed rooms</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

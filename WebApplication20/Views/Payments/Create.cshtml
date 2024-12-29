@@ -1,0 +1,268 @@
+﻿@model WebApplication20.Models.Payment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light grey background */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        /* Card Preview */
+        .card-preview {
+            background: linear-gradient(135deg, #333, #555); /* Subtle gradient */
+            color: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            width: 320px;
+            height: 200px;
+            margin-right: 20px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .chip {
+            width: 30px;
+            height: 30px;
+            background-color: #d1a354;
+            border-radius: 5px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+        }
+
+        .mastercard-logo {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .mastercard-logo .circle {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: -4px;
+        }
+
+        .circle1 {
+            background-color: #eb001b;
+        }
+
+        .circle2 {
+            background-color: #f79e1b;
+        }
+
+        .card-holder, .card-number, .expiry-date, .cvv {
+            letter-spacing: 1px;
+            margin-left:12px;
+        }
+
+        .expiry-cvv {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Payment Form */
+        .payment-container {
+            max-width: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .payment-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .payment-form input[type="text"],
+        .payment-form input[type="email"],
+        .payment-form input[type="number"] {
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+        }
+
+        .payment-form input[type="submit"] {
+            border-radius: 5px;
+            padding: 10px 0;
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .payment-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Card Preview Section -->
+        <div class="card-preview">
+            <div class="chip"></div>
+            <h4 class="card-holder" id="cardHolder">CARD HOLDER</h4>
+            <p class="card-number" id="cardNumber">**** **** **** ****</p>
+            <div class="expiry-cvv">
+                <span class="expiry-date" id="expiryDate">MM/YY</span>
+                <span class="cvv" id="cvv">CVV</span>
+            </div>
+            <div class="mastercard-logo">
+                <div class="circle circle1"></div>
+                <div class="circle circle2"></div>
+            </div>
+        </div>
+
+        <!-- Payment Form Section -->
+        <div class="payment-container">
+            <div class="payment-header">
+                <h2>Secure Payment</h2>
+                <p>Please fill in your payment details</p>
+            </div>
+            <form class="payment-form" asp-action="Create" id="paymentForm">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input asp-for="FullName" class="form-control" placeholder="Full Name" id="inputFullName">
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Email" class="form-control" placeholder="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="CardNumber" class="form-control" placeholder="Card Number" id="inputCardNumber">
+                    <span asp-validation-for="CardNumber" class="text-danger"></span>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <input asp-for="ExpiryDate" class="form-control" placeholder="MM/YY" id="inputExpiryDate" maxlength="5">
+                        <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <input asp-for="CVV" class="form-control" placeholder="CVV" id="inputCVV">
+                        <span asp-validation-for="CVV" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Room Type</label>
+                    <div class="form-check">
+                        <input asp-for="Amount" type="radio" class="form-check-input" id="singleRoom" name="Amount" value="5000">
+                        <label class="form-check-label" for="singleRoom">Single - R5000</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="Amount" type="radio" class="form-check-input" id="doubleRoom" name="Amount" value="2500">
+                        <label class="form-check-label" for="doubleRoom">Double - R2500</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="Amount" type="radio" class="form-check-input" id="tripleRoom" name="Amount" value="1666">
+                        <label class="form-check-label" for="tripleRoom">Triple - R1666</label>
+                    </div>
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="payNowButton">
+                    Pay Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const payNowButton = document.getElementById('payNowButton');
+        const paymentForm = document.getElementById('paymentForm');
+        const radioButtons = document.querySelectorAll('input[name="Amount"]');
+
+        function checkFormCompletion() {
+            const allFieldsFilled = [...paymentForm.elements].every(input =>
+                (input.type !== "radio" && input.value.trim()) ||
+                (input.type === "radio" && input.checked)
+            );
+
+            if (allFieldsFilled) {
+                payNowButton.innerHTML = '<i class="fas fa-check"></i> Pay Now';
+                payNowButton.classList.add('btn-success');
+            } else {
+                payNowButton.innerHTML = 'Pay Now';
+                payNowButton.classList.remove('btn-success');
+            }
+        }
+
+        paymentForm.addEventListener('input', checkFormCompletion);
+        radioButtons.forEach(radio => radio.addEventListener('change', checkFormCompletion));
+    </script>
+
+    <!-- Font Awesome for tick icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript for Live Card Update -->
+    <script>
+        document.getElementById("inputFullName").addEventListener("input", function () {
+            document.getElementById("cardHolder").textContent = this.value || "CARD HOLDER";
+        });
+
+        document.getElementById("inputCardNumber").addEventListener("input", function () {
+            let cardNumber = this.value.replace(/\D/g, ''); // Remove non-digits
+            cardNumber = cardNumber.replace(/(\d{4})(?=\d)/g, '$1 '); // Add spaces after every 4 digits
+            document.getElementById("cardNumber").textContent = cardNumber || "**** **** **** ****";
+        });
+
+        document.getElementById("inputExpiryDate").addEventListener("input", function () {
+            document.getElementById("expiryDate").textContent = this.value || "MM/YY";
+        });
+
+        document.getElementById("inputCVV").addEventListener("input", function () {
+            document.getElementById("cvv").textContent = this.value || "CVV";
+        });
+    
+        document.getElementById("inputExpiryDate").addEventListener("input", function () {
+            let input = this.value.replace(/\D/g, ''); // Remove non-digit characters
+            if (input.length >= 2) {
+                input = input.substring(0, 2) + '/' + input.substring(2); // Insert slash after MM
+            }
+            this.value = input.substring(0, 5); // Limit to MM/YY format
+        });
+    </script>
+
+</body>
+</html>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

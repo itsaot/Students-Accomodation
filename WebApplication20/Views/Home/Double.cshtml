@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "Bouble Rooms";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <h1 class="text-center"><i class="fas fa-bed"></i> @ViewData["Title"]</h1>
+    <p class="text-center">Choose your perfect double room <i class="fas fa-star"></i></p>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="room-card card shadow-sm">
+                <img src="~/double 3.jpg" class="card-img-top" alt="Double Room 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Double Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Share a room with one student.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R2500 pp/per month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="room-card card shadow-sm">
+                    <img src="/double 4.jpg" class="card-img-top" alt="Double Room 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Double Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Share a room with one student.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R2500 pp/per month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="room-card card shadow-sm">
+                    <img src="~/double 5.jpeg" class="card-img-top" alt="Double Room 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Double Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Share a room with one student.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R2500 pp/per month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="room-card card shadow-sm">
+                    <img src="~/double 6.jpeg" class="card-img-top" alt="Double Room 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Double Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Share a room with one student.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R2500 pp/per month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="room-card card shadow-sm">
+                    <img src="~/double1.jpeg" class="card-img-top" alt="Double Room 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Double Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Share a room with one student.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R2500 pp/per month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="room-card card shadow-sm">
+                    <img src="/double2.jpg" class="card-img-top" alt="Double Room 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Double Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Share a room with one student.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R2500 pp/per month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>
+<br />
+<br />
+<br />
+<br />
+<br />

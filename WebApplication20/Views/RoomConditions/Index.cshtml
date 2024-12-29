@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApplication20.Models.RoomCondition>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Room Conditions</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="text-right">
+                <a href="@Url.Action("Create")" class="btn btn-primary">Enquiry</a>
+            </p>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Study Desk</th>
+                        <th>Fridge</th>
+                        <th>Mattress</th>
+                        <th>Wall Socket</th>
+                        <th>Chair</th>
+                        <th>Stove</th>
+                        <th>Light & Switches</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.studyDesk</td>
+                            <td>@item.fridge</td>
+                            <td>@item.mattress</td>
+                            <td>@item.wallSocket</td>
+                            <td>@item.chair</td>
+                            <td>@item.stove</td>
+                            <td>@item.lightSwitches</td>
+                            <td>@item.Discription</td>
+                            <td>
+                                <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,153 @@
+﻿@* <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Feedback!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .thank-you-icon {
+            font-size: 5rem;
+            color: #28a745;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-back:hover {
+                background-color: #0056b3;
+            }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-check-circle thank-you-icon"></i>
+        <h1>Thank You for Your Feedback!</h1>
+        <p>We appreciate your valuable feedback.</p>
+        <button class="btn-back" onclick="window.history.back()">Go Back</button>
+    </div>
+    
+</body>
+</html>
+ *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Submitted</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .success-container {
+            max-width: 500px;
+            margin: 100px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .success-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .success-message {
+            font-size: 26px;
+            text-align: center;
+            color: #28a745;
+            margin-bottom: 20px;
+            
+        }
+
+        .success-icon {
+            font-size: 64px;
+            color: #28a745;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-back-home {
+            padding: 12px 24px;
+            font-size: 18px;
+        }
+
+            .btn-back-home i {
+                margin-right: 10px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="success-container">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="success-header">
+                <h2>Feedback Submitted</h2>
+            </div>
+            <div class="success-message"><strong>
+                Thank you for your feedback!
+                <p>We appreciate your valuable feedback.</p>
+                </strong>
+            </div>
+            <div class="text-center">
+                <a href="/" class="btn btn-primary btn-back-home"><i class="fas fa-home"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

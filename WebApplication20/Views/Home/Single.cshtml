@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Single Rooms";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+ 
+        <h1 class="text-center"><i class="fas fa-bed"></i> @ViewData["Title"]</h1>
+        <p class="text-center">Choose your perfect single room <i class="fas fa-star"></i></p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="room-card card shadow-sm">
+                    <img src="~/single 1.jpeg" class="card-img-top" alt="Single Room 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Double bed, couch, TV, and study table.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R5000 per Month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="room-card card shadow-sm">
+                    <img src="~/single 2.jpeg" class="card-img-top" alt="Single Room 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Single bed, study table, and TV (no couch).</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R5000 per Month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="room-card card shadow-sm">
+                    <img src="~/single 3.jpeg" class="card-img-top" alt="Single Room 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Single bed, couch, study table, and TV.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R5000 per Month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="room-card card shadow-sm">
+                    <img src="~/single 4.jpeg" class="card-img-top" alt="Single Room 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Basic single room with essential amenities.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R5000 per Month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="room-card card shadow-sm">
+                    <img src="~/single 5.jpeg" class="card-img-top" alt="Single Room 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Cozy single room with essential facilities.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R5000 per Month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="room-card card shadow-sm">
+                    <img src="~/single 6.jpeg" class="card-img-top" alt="Single Room 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room <i class="fas fa-bed"></i></h5>
+                        <p class="card-text">Affordable single room with basic amenities.</p>
+                        <p class="card-text"><i class="fas fa-calendar-alt"></i> R5000 per Month</p>
+                        <form asp-area="" asp-controller="StudentBookings" asp-action="Create">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+    <!-- Bootstrap JS and Font Awesome -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<br />
+<br />
+<br />
